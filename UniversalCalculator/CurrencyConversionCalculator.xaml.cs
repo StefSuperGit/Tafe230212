@@ -27,6 +27,14 @@ namespace Calculator
             this.InitializeComponent();
         }
 
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+			double amount;
 
+			amount = double.Parse(amountTextBox.Text);
+
+
+
+		}
 	}
 }

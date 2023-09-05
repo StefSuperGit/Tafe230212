@@ -27,7 +27,7 @@
 				<StackPanel Orientation="Horizontal">
 				<StackPanel>
 				<TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Text="Amount $" TextWrapping="Wrap" VerticalAlignment="Top" Height="46" Width="225" FontSize="24"/>
-					<TextBox HorizontalAlignment="Left" Margin="10,10,0,0" Text="1000" TextWrapping="Wrap" VerticalAlignment="Top" Width="225" Height="46"/>
+					<TextBox x:Name="amountTextBox" HorizontalAlignment="Left" Margin="10,10,0,0" Text="1000" TextWrapping="Wrap" VerticalAlignment="Top" Width="225" Height="46"/>
 			</StackPanel>
 			<StackPanel>
 				<TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Text="From" TextWrapping="Wrap" VerticalAlignment="Top" Height="46" Width="225" FontSize="24"/>
@@ -39,14 +39,14 @@
 				</StackPanel>
 			</StackPanel>
 			<StackPanel>
-				<TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Text="1000 US Dollars =" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="500" FontSize="24"/>
-				<TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Text="$728.72436000 British Pounds " TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="500" FontSize="24" SelectionChanged="TextBlock_SelectionChanged"/>
-				<TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Text="1 USD = 0.72872436 British PPounds" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="500" FontSize="24"/>
-				<TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Text="1 Britsh Pound = 1.371907 USD" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="500" FontSize="24"/>
+				<TextBlock x:Name="selectedCurrencyTextBlock" HorizontalAlignment="Left" Margin="10,10,0,0" Text="1000 US Dollars =" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="500" FontSize="24"/>
+				<TextBlock x:Name="destinationCurrencyTextBlock" HorizontalAlignment="Left" Margin="10,10,0,0" Text="$728.72436000 British Pounds " TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="500" FontSize="24" SelectionChanged="TextBlock_SelectionChanged"/>
+				<TextBlock x:Name="comparrsionTextBlock" HorizontalAlignment="Left" Margin="10,10,0,0" Text="1 USD = 0.72872436 British PPounds" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="500" FontSize="24"/>
+				<TextBlock x:Name="comparrisonReversedTextBlock" HorizontalAlignment="Left" Margin="10,10,0,0" Text="1 Britsh Pound = 1.371907 USD" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="500" FontSize="24"/>
 			</StackPanel>
 		</StackPanel>
 		<StackPanel x:Name="Bottom" Grid.Row="2" VerticalAlignment="Center" >
-			<Button Content="Currency conversion" Margin="10,10,0,0" HorizontalAlignment="Center" Width="500" Height="125" FontSize="42"/>
+			<Button Content="Currency conversion" Margin="10,10,0,0" HorizontalAlignment="Center" Width="500" Height="125" FontSize="42" Click="Button_Click"/>
 			<Button Content="Exit" Margin="10,10,0,0" HorizontalAlignment="Center" Width="250" Height="62.5" FontSize="42"/>
 		</StackPanel>
 
