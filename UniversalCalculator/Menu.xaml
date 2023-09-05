@@ -11,8 +11,8 @@
     <Grid>
 		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Top"  Orientation="Vertical">
 			<TextBox Height="100" Margin="0,40,0,0" BorderThickness="0" TextAlignment="Center" VerticalContentAlignment="Center" Text="Universal Calculator" HorizontalAlignment="Center" VerticalAlignment="Top" Width="500" Background="{ThemeResource SystemControlAcrylicWindowBrush}" FontSize="32" TextWrapping="Wrap"/>
-			<Button Name="mathsCalculatorButton" Content="Maths Calculator" Height="70" Margin="0,50,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="300" FontSize="18"/>
-			<Button Name="mortgageCalculatorButton" Content="Mortgage Calculator" Height="70" Margin="0,50,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="300" FontSize="18"/>
+			<Button Name="mathsCalculatorButton" Content="Maths Calculator" Height="70" Margin="0,50,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="300" FontSize="18" Click="mathsCalculatorButton_Click"/>
+			<Button Name="mortgageCalculatorButton" Content="Mortgage Calculator" Height="70" Margin="0,50,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="300" FontSize="18" Click="mortgageCalculatorButton_Click"/>
 			<Button Name="currencyConverterButton" Content="Currency Converter" Height="70" Margin="0,50,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="300" FontSize="18"/>
 			<Button Name="exitButton" Content="Exit" Height="100" Margin="0,50,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="300" FontSize="18"/>
 		</StackPanel>

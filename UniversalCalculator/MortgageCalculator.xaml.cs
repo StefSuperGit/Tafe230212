@@ -17,14 +17,51 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Calculator
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
-    public sealed partial class MortgageCalculator : Page
-    {
-        public MortgageCalculator()
-        {
-            this.InitializeComponent();
-        }
-    }
+	/// <summary>
+	/// An empty page that can be used on its own or navigated to within a Frame.
+	/// </summary>
+	public sealed partial class MortgageCalculator : Page
+	{
+		// Initialise variables
+		private double principalBorrow;
+		private double years;
+		private double months;
+		private double yearlyInterestRate;
+		private double monthlyInterestRate;
+
+		// Stefan Exclusive
+		private double periods;
+
+		private double monthlyRepayment;
+		
+
+		public MortgageCalculator()
+		{
+			this.InitializeComponent();
+		}
+
+		private void calculateButton_Click(object sender, RoutedEventArgs e)
+		{
+			principalBorrow = double.Parse(principalBorrowTextBox.Text);
+			years = double.Parse(yearsTextBox.Text);
+			months = double.Parse(monthsTextBox.Text);
+			yearlyInterestRate = double.Parse(yearlyInterestRateTextBox.Text) / 100d;
+			monthlyInterestRate = yearlyInterestRate / 12d;
+
+			periods = years * 12 + months;
+
+			monthlyRepayment = principalBorrow * (monthlyInterestRate * (Math.Pow((1+monthlyInterestRate), periods)) / ((Math.Pow((1+monthlyInterestRate), periods)) - 1));
+
+			// Increase Monthly Rate ready for display
+			monthlyInterestRate = monthlyInterestRate * 100d;
+
+			monthlyInterestRateTextBox.Text = monthlyInterestRate.ToString("N4");
+			monthlyRepaymentTextBox.Text = monthlyRepayment.ToString("N2");
+		}
+
+		private void exitButton_Click(object sender, RoutedEventArgs e)
+		{
+			this.Frame.Navigate(typeof(Menu));
+		}
+	}
 }
