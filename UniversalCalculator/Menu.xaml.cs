@@ -36,23 +36,21 @@ namespace Calculator
 		}
 
 		// Buttons Code
-		/*
+
 		private void mortgageCalculatorButton_Click(object sender, RoutedEventArgs e)
 		{
-			this.Frame.Navigate(typeof(Mortgage_Calculator_Page));
+			this.Frame.Navigate(typeof(MortgageCalculator));
 		}
 
 		private void currencyConverterButton_Click(object sender, RoutedEventArgs e)
 		{
-			this.Frame.Navigate(typeof(Currency_Calculator_Page));
+			this.Frame.Navigate(typeof(CurrencyConversionCalculator));
 		}
 
 		private void exitButton_Click(object sender, RoutedEventArgs e)
 		{
-			this.Frame.Navigate(typeof(MainMenu));
+			this.Frame.Navigate(typeof(MainPage));
 		}
-
-		*/
 
 
 	}
