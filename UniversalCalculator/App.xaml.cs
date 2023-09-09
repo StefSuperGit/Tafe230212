@@ -30,7 +30,7 @@ namespace Calculator
 			if (e.PrelaunchActivated == false)
 			{
 				if (rootFrame.Content == null)
-					rootFrame.Navigate(typeof(Menu), e.Arguments);
+					rootFrame.Navigate(typeof(CurrencyConversionCalculator), e.Arguments);
 
 				Window.Current.Activate();
 			}
