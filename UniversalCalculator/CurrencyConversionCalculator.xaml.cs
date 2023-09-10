@@ -61,8 +61,8 @@ namespace Calculator
 
 		private async void Button_Click(object sender, RoutedEventArgs e)
 		{
-			double fromAmount;
-			double toAmount;
+			double fromAmount, toAmount;
+			int fromIndex, toIndex;
 			string stringBuilder;
 
 
@@ -70,6 +70,9 @@ namespace Calculator
 			double[,] currencyArray = conversionTable();
 
 			string[,] nameCurrency = conversionName();
+
+			fromIndex = fromCurrencyBox.SelectedIndex;
+			toIndex = toCurrencyBox.SelectedIndex;
 
 			// Saves the amount entered into local variable
 			try
@@ -79,26 +82,34 @@ namespace Calculator
 			catch
 			{
 				
-				var dialogMessage = new MessageDialog("Error! Please enter a valid amount with no letters or symbols! ");
+				var dialogMessage = new MessageDialog("Error! Please enter a valid amount with no letters or symbols!");
 				await dialogMessage.ShowAsync();
 				amountTextBox.Focus(FocusState.Programmatic);
 				return;
 			}
 
+			// Checks if both currencies have been selected
+			if (fromIndex == -1 || toIndex == -1)
+			{
+				var dialogMessage = new MessageDialog("Error! Please select currencies to be converted!");
+				await dialogMessage.ShowAsync();
+				return;
+			}
+
 			// Multiples amount by selected currency rate
-			toAmount = fromAmount * currencyArray[fromCurrencyBox.SelectedIndex, toCurrencyBox.SelectedIndex];
+			toAmount = fromAmount * currencyArray[fromIndex, toIndex];
 
 
-			stringBuilder = fromAmount.ToString() + " " + nameCurrency[1, fromCurrencyBox.SelectedIndex].ToString() + "=";
+			stringBuilder = fromAmount.ToString() + " " + nameCurrency[1, fromIndex].ToString() + "=";
 			selectedCurrencyTextBlock.Text = stringBuilder;
 
-			stringBuilder = nameCurrency[0, toCurrencyBox.SelectedIndex].ToString() + toAmount.ToString() + " " + nameCurrency[1, toCurrencyBox.SelectedIndex].ToString();
+			stringBuilder = nameCurrency[0, toIndex].ToString() + toAmount.ToString() + " " + nameCurrency[1, toIndex].ToString();
 			destinationCurrencyTextBlock.Text = stringBuilder;
 
-			stringBuilder = nameCurrency[0, fromCurrencyBox.SelectedIndex].ToString() + "1" + " = " + currencyArray[fromCurrencyBox.SelectedIndex, toCurrencyBox.SelectedIndex] + " " + nameCurrency[1, toCurrencyBox.SelectedIndex].ToString();
+			stringBuilder = nameCurrency[0, fromIndex].ToString() + "1" + " = " + currencyArray[fromIndex, toIndex] + " " + nameCurrency[1, toIndex].ToString();
 			comparrsionTextBlock.Text = stringBuilder;
 
-			stringBuilder = nameCurrency[0, toCurrencyBox.SelectedIndex].ToString() + "1" + " = " + currencyArray[toCurrencyBox.SelectedIndex, fromCurrencyBox.SelectedIndex] + " " + nameCurrency[1, fromCurrencyBox.SelectedIndex].ToString();
+			stringBuilder = nameCurrency[0, toIndex].ToString() + "1" + " = " + currencyArray[toIndex, fromIndex] + " " + nameCurrency[1, fromIndex].ToString();
 			comparrisonReversedTextBlock.Text = stringBuilder;
 
 		}
