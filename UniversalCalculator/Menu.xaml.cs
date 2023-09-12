@@ -50,11 +50,13 @@ namespace Calculator
 		}
 		*/
 
+		//Button added
 		private void currencyConverterButton_Click(object sender, RoutedEventArgs e)
 		{
 			this.Frame.Navigate(typeof(CurrencyConversionCalculator));
 		}
 
+		
 		private void exitButton_Click(object sender, RoutedEventArgs e)
 		{
 			Application.Current.Exit();
