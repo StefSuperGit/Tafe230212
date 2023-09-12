@@ -42,11 +42,12 @@ namespace Calculator
 
 
 		// Buttons Code
-
+		/*
 		private void mortgageCalculatorButton_Click(object sender, RoutedEventArgs e)
 		{
 			this.Frame.Navigate(typeof(MortgageCalculator));
 		}
+		*/
 
 		private void currencyConverterButton_Click(object sender, RoutedEventArgs e)
 		{
@@ -55,7 +56,7 @@ namespace Calculator
 
 		private void exitButton_Click(object sender, RoutedEventArgs e)
 		{
-			this.Frame.Navigate(typeof(MainPage));
+			Application.Current.Exit();
 		}
 
 

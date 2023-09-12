@@ -13,8 +13,8 @@
 			<TextBox Height="100" Margin="0,40,0,0" BorderThickness="0" TextAlignment="Center" VerticalContentAlignment="Center" Text="Universal Calculator" HorizontalAlignment="Center" VerticalAlignment="Top" Width="500" Background="{ThemeResource SystemControlAcrylicWindowBrush}" FontSize="32" TextWrapping="Wrap"/>
 			<Button x:ConnectionId='2' Name="mathsCalculatorButton" Content="Maths Calculator" Height="70" Margin="0,50,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="300" FontSize="18"                                    />
 			<Button x:ConnectionId='3' Name="mortgageCalculatorButton" Content="Mortgage Calculator" Height="70" Margin="0,50,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="300" FontSize="18"                                       />
-			<Button x:ConnectionId='4' Name="currencyConverterButton" Content="Currency Converter" Height="70" Margin="0,50,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="300" FontSize="18"/>
-			<Button x:ConnectionId='5' Name="exitButton" Content="Exit" Height="100" Margin="0,50,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="300" FontSize="18"/>
+			<Button x:ConnectionId='4' Name="currencyConverterButton" Content="Currency Converter" Height="70" Margin="0,50,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="300" FontSize="18"                                      />
+			<Button x:ConnectionId='5' Name="exitButton" Content="Exit" Height="100" Margin="0,50,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="300" FontSize="18"                         />
 		</StackPanel>
 		<StackPanel HorizontalAlignment="Right" VerticalAlignment="Top"  Orientation="Vertical">
 			<Image Source="abacus.PNG" Width="100" Height="100"/>
